@@ -1,4 +1,6 @@
+import FetchedPosts from "./components/FetchedPosts";
 import PostForm from "./components/PostForm";
+import Posts from "./components/Posts";
 
 function App() {
   return (
@@ -10,10 +12,12 @@ function App() {
       </div>
       <div className="row">
         <div className="col">
-          POSTS
+        <h1>Sync posts</h1>
+          <Posts posts={[12, 123, 1234]}/>
         </div>
         <div className="col">
-          FETCHED POSTS
+        <h1>Async posts</h1>
+          <FetchedPosts posts={[]}/>
         </div>
       </div>
     </div>

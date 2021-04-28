@@ -8,6 +8,9 @@ export default () => {
   const posts = useSelector(state => state.posts.fetchedPosts);
   const isLoading = useSelector(state => state.app.loading)
   console.log('isLoading', isLoading)
+  if (isLoading) {
+    return <h1>🎲</h1>
+  }
   if (!posts.length) {
     return (
     <button
@@ -16,8 +19,6 @@ export default () => {
       >Load post
     </button>)
   }
-  if (isLoading) {
-    return <p>🎲</p>
-  }
+  
   return posts.map(post => <Post post={post} key={post.id}/>)
 }

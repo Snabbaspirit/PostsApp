@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import Post from './Post';
 
 const Posts = ({syncPosts}) => {
+  console.log('syncPosts', syncPosts)
   if (!syncPosts.length) {
     return <h2>No posts yet</h2>
   }

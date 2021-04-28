@@ -16,10 +16,15 @@ class PostForm extends React.Component {
 
     const {title} = this.state;
 
+    if(!title.trim()) {
+      return
+    }
+
     const newPost = {
       title, id: Date.now().toString()
     }
     this.props.createPost(newPost);
+
     console.log('newPost', newPost)
     this.setState({title: ''})
   }
@@ -28,7 +33,6 @@ class PostForm extends React.Component {
     this.setState(prev => ({...prev, ...{
       [event.target.name]: event.target.value
    }}))
-   console.log('onChange', this.state)
   }
 
   render() {
